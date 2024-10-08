@@ -1,2 +1,3 @@
 # terraform-google-firestore
-Terraform Google Cloud Firestore
+
+Terraform Google Firestore
