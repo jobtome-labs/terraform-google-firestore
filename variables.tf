@@ -34,14 +34,14 @@ variable "type" {
 
 variable "concurrency_mode" {
   type        = string
-  description = "(Optional) The Concurrency Control Mode to use for this Database."
+  description = "(Optional) The Concurrency Control Mode to use for this Database. Defaults to `OPTIMISTIC`."
 
   validation {
     condition     = contains(["OPTIMISTIC", "PESSIMISTIC", "OPTIMISTIC_WITH_ENTITY_GROUPS"], var.concurrency_mode)
     error_message = "Allowed Concurrency Control Modes: [\"OPTIMISTIC\", \"PESSIMISTIC\", \"OPTIMISTIC_WITH_ENTITY_GROUPS\"]."
   }
 
-  default = null
+  default = "OPTIMISTIC"
 }
 
 variable "delete_protection_state" {
